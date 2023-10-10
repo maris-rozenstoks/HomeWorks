@@ -52,3 +52,6 @@ let areaTriangle = AC / 2 * CB
 //4. perimeter=AC+CB+AB
 let perimeter = AC+CB+AB
 print("Triangl's area is \(areaTriangle) and perimeter is \(perimeter)")
+
+let daysInYear: Float = 365.25
+let y = daysInYear / 30
