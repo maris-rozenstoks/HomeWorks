@@ -43,8 +43,8 @@ Conditions: triangle length: AC = 8.0, CB = 6.0. The hypotenuse of triangle AB i
  4.Triangle perimeter
 */
 //2. AB=hypotenuse
-let AC: Double = 8.0
-let CB: Double = 6.0
+let AC: Double = 8
+let CB: Double = 6
 let AB = (AC * AC + CB * CB).squareRoot()
 //let AB = sqrt(pow(AC, 2) + pow(CB, 2))
 //3. areaTriangle=0.5AC*CB
@@ -53,5 +53,4 @@ let areaTriangle = AC / 2 * CB
 let perimeter = AC+CB+AB
 print("Triangl's area is \(areaTriangle) and perimeter is \(perimeter)")
 
-let daysInYear: Float = 365.25
-let y = daysInYear / 30
+
