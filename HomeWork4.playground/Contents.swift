@@ -113,6 +113,8 @@ print(createArray(from: 1, to: 100))
  }
  print("Odd numbers: \(oddNumberArray)")
 
+print(arrayofInt.removeAll(where: isEvenNumber))
+
 /*
  var myArray = createArray(from: 1, to: 100)
  
