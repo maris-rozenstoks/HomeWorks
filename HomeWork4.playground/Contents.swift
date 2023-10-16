@@ -30,28 +30,15 @@ for (teamNBA, score) in resultsOfGames {
  Declare an Array of Int. In the wallet you have only 1x by 5 - 500 EUR.
  Create a func to calculateCash sum of your cash inside your wallet.
  Run the func.
- //
- let myArr = Array(5...500)
-
- func allSum (_ myArr: Double) {
-     var mySum = 0.0
-     for myNum in myArr {
-         mySum += mySum
-     }
- }
  */
 
-var arrayofInt = [5, 10, 20, 50, 100, 200, 500]
+let arrayOfInt: [Int] = [5, 10, 20, 50, 100, 200, 500]
 
-sumMyWallet(numbers: arrayofInt)
-
-func sumMyWallet (numbers: [Int]) -> Int {
-    var myWallet = 0
-    for myMoney in numbers {
-        myWallet += myMoney
-    }
-    return myWallet
+func sumMyWallet(in arrayOfInt: [Int]) -> Int {
+    return arrayOfInt.reduce(0, +)
 }
+
+print("Total cash in wallet: \(sumMyWallet(in: arrayOfInt)) EUR")
 
 /*
  Exercise 3
@@ -59,17 +46,11 @@ func sumMyWallet (numbers: [Int]) -> Int {
  Run the func.
  */
 
-let numberToCheck = 22
-isEvenNumber(number: numberToCheck)
-let isEven = isEvenNumber(number: numberToCheck)
-
-func isEvenNumber(number: Int) -> Bool {
-    return number % 2 == 0 }
-if isEven {
-    print("The number is even.")
-} else {
-    print("The number is odd.")
+func isEvenNumber(_ number: Int) -> Bool {
+    return number % 2 == 0
 }
+let testNumber = 8
+print ("\(testNumber) is even: \(isEvenNumber(testNumber))")
 
 /*
  Exercise 4
@@ -86,14 +67,21 @@ if isEven {
  */
 
 func createArray(from start: Int, to end: Int) -> [Int] {
-    var result = [Int]()
-    for number in start...end {
-        result.append(number)
-    }
-    return result
+    return Array (start ... end)
 }
-createArray(from: 1, to: 100)
-print(createArray(from: 1, to: 100))
+ var array = createArray(from: 1, to: 100)
+print(array)
+    
+    
+    
+//    var result = [Int]()
+//    for number in start...end {
+//        result.append(number)
+//    }
+//    return result
+//}
+//createArray(from: 1, to: 100)
+//print(createArray(from: 1, to: 100))
 
 /*
  Exercise 5
@@ -104,26 +92,12 @@ print(createArray(from: 1, to: 100))
  It should be 1/2 of createArray and started from [1,3,5.....
  */
  
- var oddNumberArray = [Int]()
- let myArray = createArray(from: 1, to: 100)
- for number in myArray {
-     if number % 2 != 0 {
-         oddNumberArray.append(number)
-     }
- }
- print("Odd numbers: \(oddNumberArray)")
+for number in array{
+    if isEvenNumber(number) {
+        if let indexOfNumber = array.firstIndex(of: number) {
+            array.remove(at: indexOfNumber)
+        }
+    }
+}
 
-print(arrayofInt.removeAll(where: isEvenNumber))
-
-/*
- var myArray = createArray(from: 1, to: 100)
- 
- for (index, number) in myArray() {
-     if isEvenNumber(evenNumber: number) {
-         if let evenIndex = myArray.firstIndex(of: number) {
-             myArray.remove(at: evenIndex)
-         }
-     }
- }
- */
-
+print (array)

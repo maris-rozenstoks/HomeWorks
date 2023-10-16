@@ -1,46 +1,37 @@
-import UIKit
-/*
- Exercise 4
- Create a func createArray to calculate some number from start: to end: than return Int array.
- Declare array and put createArray(from: 1, to: 100)
- print(array)
- */
-let numberToCheck = 21
-isEvenNumber(evenNumber: numberToCheck)
-let isEven = isEvenNumber(evenNumber: numberToCheck)
-
-func isEvenNumber(evenNumber: Int) -> Bool {
-    return evenNumber % 2 == 0 }
-if isEven {
-    print("The number is even.")
-} else {
-    print("The number is odd.")
+enum CalculationType: String {
+    case addition = "+"
+    case subtraction = "-"
+    case multiplication = "*"
+    case division = "/"
 }
 
-func createArray(from start: Int, to end: Int) -> [Int] {
-    var result = [Int]()
-    for number in start...end {
-        result.append(number)
+func calculateResult(firstNumber: Int, andSecondNumber numberTwo: Int, withCalculationType calculationType: CalculationType) -> Int {
+    var result = firstNumber
+
+    switch calculationType {
+    case .addition:
+        result += numberTwo
+    case .subtraction:
+        result -= numberTwo
+    case .multiplication:
+        result *= numberTwo
+    case .division:
+        if numberTwo != 0 {
+            result /= numberTwo
+        } else {
+            print("Division with zero is forbidden")
+        }
     }
+
     return result
 }
-createArray(from: 1, to: 100)
-print(createArray(from: 1, to: 100))
 
+let numberOne = 8
+let numberTwo = 4
 
-let myArray = createArray(from: 1, to: 100)
-var index = 0
-while index < myArray.count {
-    let number = myArray[index]
-    if number % 2 == 0 {
-        if let evenIndex = myArray.firstIndex(of: number) {
-            myArray.remove(at: evenIndex)
-        }
-    } else {
-        index += 1
-    }
+let calculationTypes: [CalculationType] = [.addition, .subtraction, .multiplication, .division]
+
+for calculationType in calculationTypes {
+    let result = calculateResult(firstNumber: numberOne, andSecondNumber: numberTwo, withCalculationType: calculationType)
+    print("Result: \(calculationType.rawValue) \(numberOne) and \(numberTwo) = \(result)")
 }
-
-print(myArray)
-
-

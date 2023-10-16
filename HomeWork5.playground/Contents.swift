@@ -72,7 +72,7 @@ class Figure {
     }
 }
 
-//3.Create new Child(Subclass) Rectangle of Parent Class Figure
+
 
 class Rectangle: Figure {
     override func squareOfFigure() -> Float {
@@ -90,11 +90,7 @@ class Rectangle: Figure {
     }
 }
 
-let myRectangle = Rectangle(height: 4.0, width: 5.0)
+let myRectangle = Rectangle(height: 4, width: 5)
 myRectangle.description()
 
-/* 3.Inside Rectangle override func squareOfFigure() -> Float to calculate and return square and override func perimeterOfFigure() -> Float to calculate and return perimeter !
-4.Inside Rectangle make a func description() where we can print("Rectangle area is: \(squareOfFigure()), and perimeter Of Figure is: \(perimeterOfFigure())")
-5.Make Class example from Rectangle Class and named it as myRectangle and give a value as you want for height and width.
-6.Finally call myRectangle.description()
-*/
+
