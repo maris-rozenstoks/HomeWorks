@@ -21,10 +21,10 @@ import UIKit
 
 
 enum CalculationType: String {
-    case addition = "+"
-    case subtraction = "-"
-    case multiplication = "*"
-    case division = "/"
+    case addition = "Addition"
+    case subtraction = "Subtraction"
+    case multiplication = "Multiplication"
+    case division = "Division"
 }
 
 func calculateResult(firstNumber: Int, andSecondNumber numberTwo: Int, withCalculationType calculationType: CalculationType) -> Int {
